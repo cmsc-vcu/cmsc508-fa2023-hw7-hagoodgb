@@ -19,7 +19,10 @@
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS people;
 DROP TABLE IF EXISTS skills;
-# ... 
+DROP TABLE IF EXISTS peopleskills;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS peopleroles;
+
 SET FOREIGN_KEY_CHECKS=1;
 
 # Section 2
@@ -30,7 +33,7 @@ SET FOREIGN_KEY_CHECKS=1;
 # You can assign the skill descriptions.  Please be creative!
 
 CREATE TABLE skills (
-    skills_id INT AUTO_INCREMENT,
+    skills_id INT NOT NULL,
     name VARCHAR(255) NOT NULL,
     description VARCHAR(4096) NOT NULL,
     tag VARCHAR(255) NOT NULL,
@@ -45,36 +48,36 @@ CREATE TABLE skills (
 # Populates the skills table with eight skills, their tag fields must exactly contain “Skill 1”, “Skill 2”, etc.
 # You can assign skill names.  Please be creative!
 
-INSERT INTO skills (name, description, tag) 
-VALUES ('Lightsaber Crafting', 'Master the ancient art of constructing a lightsaber, the iconic weapon of the Jedi and Sith. Requires knowledge in kyber crystal harvesting and energy modulation.', 'Skill 1');
+INSERT INTO skills (skills_id, name, description, tag) 
+VALUES (1, 'Lightsaber Crafting', 'Master the ancient art of constructing a lightsaber, the iconic weapon of the Jedi and Sith. Requires knowledge in kyber crystal harvesting and energy modulation.', 'Skill 1');
 
 
-INSERT INTO skills (name, description, tag) 
-VALUES ('Force Sensitivity Training', 'Develop an understanding of the Force, learning to sense and manipulate the energy that connects all living things.', 'Skill 2');
+INSERT INTO skills (skills_id, name, description, tag) 
+VALUES (2, 'Force Sensitivity Training', 'Develop an understanding of the Force, learning to sense and manipulate the energy that connects all living things.', 'Skill 2');
 
 
-INSERT INTO skills (name, description, tag) 
-VALUES ('Starship Piloting', 'Learn to navigate the stars with various classes of starships. Includes training in astrogation, combat maneuvers, and hyperspace theory.', 'Skill 3');
+INSERT INTO skills (skills_id, name, description, tag) 
+VALUES (3, 'Starship Piloting', 'Learn to navigate the stars with various classes of starships. Includes training in astrogation, combat maneuvers, and hyperspace theory.', 'Skill 3');
 
 
-INSERT INTO skills (name, description, tag) 
-VALUES ('Droid Programming', 'Gain proficiency in programming and customizing droids for various tasks, including but not limited to, protocol, astromech, and battle droids.', 'Skill 4');
+INSERT INTO skills (skills_id, name, description, tag) 
+VALUES (4, 'Droid Programming', 'Gain proficiency in programming and customizing droids for various tasks, including but not limited to, protocol, astromech, and battle droids.', 'Skill 4');
 
 
-INSERT INTO skills (name, description, tag) 
-VALUES ('Galactic Diplomacy', 'Study the complex art of diplomacy in a galaxy full of diverse species and political factions. Essential for aspiring senators and ambassadors.', 'Skill 5');
+INSERT INTO skills (skills_id, name, description, tag) 
+VALUES (5, 'Galactic Diplomacy', 'Study the complex art of diplomacy in a galaxy full of diverse species and political factions. Essential for aspiring senators and ambassadors.', 'Skill 5');
 
 
-INSERT INTO skills (name, description, tag) 
-VALUES ('Alien Languages', 'Become fluent in various alien languages, an invaluable skill for intergalactic travel and trade negotiations.', 'Skill 6');
+INSERT INTO skills (skills_id, name, description, tag) 
+VALUES (6, 'Alien Languages', 'Become fluent in various alien languages, an invaluable skill for intergalactic travel and trade negotiations.', 'Skill 6');
 
 
-INSERT INTO skills (name, description, tag) 
-VALUES ('Sith Alchemy', 'Delve into the dark side of the Force to manipulate life and matter, a secretive practice known mainly to Sith Lords.', 'Skill 7');
+INSERT INTO skills (skills_id, name, description, tag) 
+VALUES (7, 'Sith Alchemy', 'Delve into the dark side of the Force to manipulate life and matter, a secretive practice known mainly to Sith Lords.', 'Skill 7');
 
 
-INSERT INTO skills (name, description, tag) 
-VALUES ('Jedi Meditation Techniques', 'Learn ancient Jedi techniques for meditation, essential for maintaining balance and focus in the Force.', 'Skill 8');
+INSERT INTO skills (skills_id, name, description, tag) 
+VALUES (8, 'Jedi Meditation Techniques', 'Learn ancient Jedi techniques for meditation, essential for maintaining balance and focus in the Force.', 'Skill 8');
 
 
 
@@ -84,7 +87,7 @@ VALUES ('Jedi Meditation Techniques', 'Learn ancient Jedi techniques for meditat
 # All other fields can default to NULL.
 
 CREATE TABLE people (
-    people_id INT AUTO_INCREMENT,
+    people_id INT NOT NULL,
     first_name VARCHAR(255),
     last_name VARCHAR(255) NOT NULL,
     email VARCHAR(255),
@@ -102,16 +105,16 @@ CREATE TABLE people (
 # Their last names must exactly be “Person 1”, “Person 2”, etc.
 # Other fields are for you to assign.
 
-INSERT INTO people (last_name, date_joined) VALUES ('Person 1', CURRENT_DATE());
-INSERT INTO people (last_name, date_joined) VALUES ('Person 2', CURRENT_DATE());
-INSERT INTO people (last_name, date_joined) VALUES ('Person 3', CURRENT_DATE());
-INSERT INTO people (last_name, date_joined) VALUES ('Person 4', CURRENT_DATE());
-INSERT INTO people (last_name, date_joined) VALUES ('Person 5', CURRENT_DATE());
-INSERT INTO people (last_name, date_joined) VALUES ('Person 6', CURRENT_DATE());
-INSERT INTO people (last_name, date_joined) VALUES ('Person 7', CURRENT_DATE());
-INSERT INTO people (last_name, date_joined) VALUES ('Person 8', CURRENT_DATE());
-INSERT INTO people (last_name, date_joined) VALUES ('Person 9', CURRENT_DATE());
-INSERT INTO people (last_name, date_joined) VALUES ('Person 10', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (1, 'Person 1', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (2, 'Person 2', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (3, 'Person 3', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (4, 'Person 4', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (5, 'Person 5', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (6, 'Person 6', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (7, 'Person 7', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (8, 'Person 8', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (9, 'Person 9', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, date_joined) VALUES (10, 'Person 10', CURRENT_DATE());
 
 
 
@@ -119,6 +122,15 @@ INSERT INTO people (last_name, date_joined) VALUES ('Person 10', CURRENT_DATE())
 # Create peopleskills( id, skills_id, people_id, date_acquired )
 # None of the fields can ba NULL. ID can be auto_increment.
 
+CREATE TABLE peopleskills (
+    peopleskills_id INT AUTO_INCREMENT,
+    skills_id INT,
+    people_id INT,
+    date_aquired DATE,
+    FOREIGN KEY (skills_id) REFERENCES skills(skills_id),
+    FOREIGN KEY (people_id) REFERENCES people(people_id),
+    PRIMARY KEY (peopleskills_id)
+);
 
 # Section 7
 # Populate peopleskills such that:
@@ -133,12 +145,54 @@ INSERT INTO people (last_name, date_joined) VALUES ('Person 10', CURRENT_DATE())
 # Person 9 has skills 2,5,6;
 # Person 10 has skills 1,4,5;
 # Note that no one has yet acquired skills 7 and 8.
+
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (1, 1, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (3, 1, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (6, 1, CURRENT_DATE());
+
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (3, 2, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (4, 2, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (5, 2, CURRENT_DATE());
+
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (1, 3, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (5, 3, CURRENT_DATE());
+
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (3, 5, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (6, 5, CURRENT_DATE());
+
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (2, 6, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (3, 6, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (4, 6, CURRENT_DATE());
+
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (3, 7, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (5, 7, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (6, 7, CURRENT_DATE());
+
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (1, 8, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (3, 8, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (5, 8, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (6, 8, CURRENT_DATE());
+
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (2, 9, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (5, 9, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (6, 9, CURRENT_DATE());
+
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (1, 10, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (4, 10, CURRENT_DATE());
+INSERT INTO peopleskills (skills_id, people_id, date_aquired) VALUES (5, 10, CURRENT_DATE());
+
  
 
 # Section 8
 # Create roles( id, name, sort_priority )
 # sort_priority is an integer and is used to provide an order for sorting roles
 
+CREATE TABLE roles (
+    roles_id INT,
+    name VARCHAR(255),
+    sort_priority INT,
+    PRIMARY KEY (roles_id)
+);
 
 
 # Section 9
@@ -146,13 +200,26 @@ INSERT INTO people (last_name, date_joined) VALUES ('Person 10', CURRENT_DATE())
 # Designer, Developer, Recruit, Team Lead, Boss, Mentor
 # Sort priority is assigned numerically in the order listed above (Designer=10, Developer=20, Recruit=30, etc.)
 
-
+INSERT INTO roles (roles_id, name, sort_priority) VALUES (1, 'Designer', 10);
+INSERT INTO roles (roles_id, name, sort_priority) VALUES (2, 'Developer', 20);
+INSERT INTO roles (roles_id, name, sort_priority) VALUES (3, 'Recruit', 30);
+INSERT INTO roles (roles_id, name, sort_priority) VALUES (4, 'Team Lead', 40);
+INSERT INTO roles (roles_id, name, sort_priority) VALUES (5, 'Boss', 50);
+INSERT INTO roles (roles_id, name, sort_priority) VALUES (6, 'Mentor', 60);
 
 # Section 10
 # Create peopleroles( id, people_id, role_id, date_assigned )
 # None of the fields can be null.  ID can be auto_increment
 
-
+CREATE TABLE peopleroles (
+    peopleroles_id INT AUTO_INCREMENT,
+    people_id INT NOT NULL,
+    role_id INT NOT NULL,
+    date_assigned DATE NOT NULL,
+    FOREIGN KEY (people_id) REFERENCES people(people_id),
+    FOREIGN KEY (role_id) REFERENCES roles(roles_id),
+    PRIMARY KEY (peopleroles_id)
+);
 
 # Section 11
 # Populate peopleroles
@@ -166,4 +233,30 @@ INSERT INTO people (last_name, date_joined) VALUES ('Person 10', CURRENT_DATE())
 # Person 8 is Designer and Team Lead
 # Person 9 is Developer
 # Person 10 is Developer and Designer
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (1, 2, CURRENT_DATE());
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (2, 5, CURRENT_DATE());
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (2, 6, CURRENT_DATE());
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (3, 2, CURRENT_DATE());
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (3, 4, CURRENT_DATE());
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (4, 3, CURRENT_DATE());
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (5, 3, CURRENT_DATE());
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (6, 2, CURRENT_DATE());
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (6, 1, CURRENT_DATE());
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (7, 1, CURRENT_DATE());
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (8, 1, CURRENT_DATE());
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (8, 4, CURRENT_DATE());
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (9, 2, CURRENT_DATE());
+
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (10, 2, CURRENT_DATE());
+INSERT INTO peopleroles (people_id, role_id, date_assigned) VALUES (10, 1, CURRENT_DATE());
+
 
