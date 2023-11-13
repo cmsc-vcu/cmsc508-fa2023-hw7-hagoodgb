@@ -61,6 +61,14 @@ CREATE TABLE people (
 
 insert into people (last_name, date_joined) values ('Person 1', CURRENT_DATE());
 insert into people (last_name, date_joined) values ('Person 2', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 3', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 4', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 5', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 6', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 7', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 8', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 9', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 10', CURRENT_DATE());
 
 
 # Section 6
