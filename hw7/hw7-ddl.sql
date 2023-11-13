@@ -59,7 +59,8 @@ CREATE TABLE people (
 # Their last names must exactly be “Person 1”, “Person 2”, etc.
 # Other fields are for you to assign.
 
-insert into people (people_id, last_name, date_joined) values (1,'Person 1', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 1', CURRENT_DATE());
+insert into people (last_name, date_joined) values ('Person 2', CURRENT_DATE());
 
 
 # Section 6
