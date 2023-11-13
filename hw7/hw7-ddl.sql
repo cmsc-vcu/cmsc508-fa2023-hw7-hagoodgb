@@ -18,6 +18,7 @@
 
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS people;
+DROP TABLE IF EXISTS skills;
 # ... 
 SET FOREIGN_KEY_CHECKS=1;
 
@@ -28,11 +29,53 @@ SET FOREIGN_KEY_CHECKS=1;
 # time committment offers some sense of how much time was required (or will be required) to gain the skill.
 # You can assign the skill descriptions.  Please be creative!
 
+CREATE TABLE skills (
+    skills_id INT AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(4096) NOT NULL,
+    tag VARCHAR(255) NOT NULL,
+    url VARCHAR(255),
+    time_commitment VARCHAR(255),
+    PRIMARY KEY(skills_id)
+);
+
 
 # Section 3
 # Populate skills
 # Populates the skills table with eight skills, their tag fields must exactly contain “Skill 1”, “Skill 2”, etc.
 # You can assign skill names.  Please be creative!
+
+INSERT INTO skills (name, description, tag) 
+VALUES ('Lightsaber Crafting', 'Master the ancient art of constructing a lightsaber, the iconic weapon of the Jedi and Sith. Requires knowledge in kyber crystal harvesting and energy modulation.', 'Skill 1');
+
+
+INSERT INTO skills (name, description, tag) 
+VALUES ('Force Sensitivity Training', 'Develop an understanding of the Force, learning to sense and manipulate the energy that connects all living things.', 'Skill 2');
+
+
+INSERT INTO skills (name, description, tag) 
+VALUES ('Starship Piloting', 'Learn to navigate the stars with various classes of starships. Includes training in astrogation, combat maneuvers, and hyperspace theory.', 'Skill 3');
+
+
+INSERT INTO skills (name, description, tag) 
+VALUES ('Droid Programming', 'Gain proficiency in programming and customizing droids for various tasks, including but not limited to, protocol, astromech, and battle droids.', 'Skill 4');
+
+
+INSERT INTO skills (name, description, tag) 
+VALUES ('Galactic Diplomacy', 'Study the complex art of diplomacy in a galaxy full of diverse species and political factions. Essential for aspiring senators and ambassadors.', 'Skill 5');
+
+
+INSERT INTO skills (name, description, tag) 
+VALUES ('Alien Languages', 'Become fluent in various alien languages, an invaluable skill for intergalactic travel and trade negotiations.', 'Skill 6');
+
+
+INSERT INTO skills (name, description, tag) 
+VALUES ('Sith Alchemy', 'Delve into the dark side of the Force to manipulate life and matter, a secretive practice known mainly to Sith Lords.', 'Skill 7');
+
+
+INSERT INTO skills (name, description, tag) 
+VALUES ('Jedi Meditation Techniques', 'Learn ancient Jedi techniques for meditation, essential for maintaining balance and focus in the Force.', 'Skill 8');
+
 
 
 # Section 4
@@ -59,16 +102,17 @@ CREATE TABLE people (
 # Their last names must exactly be “Person 1”, “Person 2”, etc.
 # Other fields are for you to assign.
 
-insert into people (last_name, date_joined) values ('Person 1', CURRENT_DATE());
-insert into people (last_name, date_joined) values ('Person 2', CURRENT_DATE());
-insert into people (last_name, date_joined) values ('Person 3', CURRENT_DATE());
-insert into people (last_name, date_joined) values ('Person 4', CURRENT_DATE());
-insert into people (last_name, date_joined) values ('Person 5', CURRENT_DATE());
-insert into people (last_name, date_joined) values ('Person 6', CURRENT_DATE());
-insert into people (last_name, date_joined) values ('Person 7', CURRENT_DATE());
-insert into people (last_name, date_joined) values ('Person 8', CURRENT_DATE());
-insert into people (last_name, date_joined) values ('Person 9', CURRENT_DATE());
-insert into people (last_name, date_joined) values ('Person 10', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 1', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 2', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 3', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 4', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 5', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 6', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 7', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 8', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 9', CURRENT_DATE());
+INSERT INTO people (last_name, date_joined) VALUES ('Person 10', CURRENT_DATE());
+
 
 
 # Section 6
