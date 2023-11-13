@@ -41,17 +41,25 @@ SET FOREIGN_KEY_CHECKS=1;
 # All other fields can default to NULL.
 
 CREATE TABLE people (
-    people_id int,
-    people_last_name varchar(256) NOT NULL,
+    people_id INT AUTO_INCREMENT,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
+    linkedin_url VARCHAR(255),
+    headshot_url VARCHAR(255),
+    discord_handle VARCHAR(255),
+    brief_bio VARCHAR(4096),
+    date_joined DATE NOT NULL,
     PRIMARY KEY (people_id)
 );
+
 
 # Section 5
 # Populate people with six people.
 # Their last names must exactly be “Person 1”, “Person 2”, etc.
 # Other fields are for you to assign.
 
-insert into people (people_id,people_last_name) values (1,'Person 1');
+insert into people (people_id, last_name, date_joined) values (1,'Person 1', CURRENT_DATE());
 
 
 # Section 6
