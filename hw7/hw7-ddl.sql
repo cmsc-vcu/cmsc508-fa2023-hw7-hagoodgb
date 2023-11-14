@@ -105,16 +105,16 @@ CREATE TABLE people (
 # Their last names must exactly be “Person 1”, “Person 2”, etc.
 # Other fields are for you to assign.
 
-INSERT INTO people (people_id, last_name, date_joined) VALUES (1, 'Person 1', CURRENT_DATE());
-INSERT INTO people (people_id, last_name, date_joined) VALUES (2, 'Person 2', CURRENT_DATE());
-INSERT INTO people (people_id, last_name, date_joined) VALUES (3, 'Person 3', CURRENT_DATE());
-INSERT INTO people (people_id, last_name, date_joined) VALUES (4, 'Person 4', CURRENT_DATE());
-INSERT INTO people (people_id, last_name, date_joined) VALUES (5, 'Person 5', CURRENT_DATE());
-INSERT INTO people (people_id, last_name, date_joined) VALUES (6, 'Person 6', CURRENT_DATE());
-INSERT INTO people (people_id, last_name, date_joined) VALUES (7, 'Person 7', CURRENT_DATE());
-INSERT INTO people (people_id, last_name, date_joined) VALUES (8, 'Person 8', CURRENT_DATE());
-INSERT INTO people (people_id, last_name, date_joined) VALUES (9, 'Person 9', CURRENT_DATE());
-INSERT INTO people (people_id, last_name, date_joined) VALUES (10, 'Person 10', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (1, 'Person 1', 'Person1@gmail.com', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (2, 'Person 2', 'Person2@gmail.com', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (3, 'Person 3', 'Person3@gmail.com', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (4, 'Person 4', 'Person4@gmail.com', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (5, 'Person 5', 'Person5@gmail.com', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (6, 'Person 6', 'Person6@gmail.com', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (7, 'Person 7', 'Person7@gmail.com', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (8, 'Person 8', 'Person8@gmail.com', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (9, 'Person 9', 'Person9@gmail.com', CURRENT_DATE());
+INSERT INTO people (people_id, last_name, email, date_joined) VALUES (10, 'Person 10', 'Person10@gmail.com', CURRENT_DATE());
 
 
 
